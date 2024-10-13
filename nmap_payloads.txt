@@ -350,6 +350,10 @@ so Nmap won't produce useful reports.
 # then get an IP address from the active_hosts file and do:
 nmap -S $active_ip $target_ip
 ```
+to evade a bypass firewalls 
+sudo nmap -Pn -sS -sV -sC -O -f -D RND:15 -T1 --source-port 53 --max-retries 2 --max-rate 100 -p 21,23,25,80,3389 44.228.249.3 | tee -a nmap_scan.log
+sudo nmap -Pn -sF -f -D RND:10 -T2 --source-port 53  -A -v -p 80,21,23,25,3389  44.228.249.3 | tee -a nmap_scan
+sudo nmap -Pn -sS -f -D RND:10 -T2 --source-port 53 -A -v -p 80,21,23,25,3389 -e eth0 --mtu 1200 --data-length 100 --scan-delay 1s 44.228.249.3 | tee -a nmap_scan
 
 
 P.S.: Another scenario to use `-S` is when Nmap is not be able to
