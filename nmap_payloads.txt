@@ -3,6 +3,7 @@
 ‘Filtered,’ ‘Dropped’ or ‘Blocked’ means that access to the port or service is blocked by a firewall and therefore it cannot be exploited
 
 
+ls /usr/share/nmap/scripts | grep -i "cve"
 
 nmap --script-updatedb 
 nmap --script vuln <target-ip>
