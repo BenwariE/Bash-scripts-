@@ -4,6 +4,8 @@
 
 
 
+nmap --script-updatedb 
+nmap --script vuln <target-ip>
 
 sudo proxychains nmap -Pn -sI  172.19.32.1  -T4 --reason 172.19.46.45 | t
 ee -a hecker.txt    
